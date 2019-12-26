@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function  isPrime(number) {
+        let flag= false;
+      if (number<2 || isNaN(number)){
+           flag = false;
+      }else if(number == 2){
+          flag = true;
+      }else {
+          for( let i = 2; i < number; i++){
+          if(number%i == 0){
+                 flag =false;
+                 break;
+          }else{
+              flag =true;
+          }
+          }
+      }
+        if(flag) {
+            document.write("Is a prime")
+        }else {
+            document.write("Not is a prime")
+        }
+    }
+   let num = parseInt(prompt("Enter a number"));
+    isPrime(num);
+    listnum();
+
+    function listnum() {
+        for (var counter = 0; counter <= 10000; counter++) {
+
+var notPrime = false;
+for (var i = 2; i <= counter; i++) {
+    if (counter%i===0 && i!==counter) {
+        notPrime = true;
+    }
+}
+if (notPrime === false) {
+            console.log(counter);
+}
+}
+}
+</script>
+</body>
+</html>
